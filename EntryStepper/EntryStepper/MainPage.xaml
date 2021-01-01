@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:cs="clr-namespace:EntryStepper.Renderers"
+             x:Class="EntryStepper.MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout Spacing="-20">
+            <StackLayout Padding="30" Margin="0,20,0,0">
+                <Image Source="backbutton" HorizontalOptions="Start" Margin="-10,0,0,0" HeightRequest="30" WidthRequest="30"/>
+                <Image Source="bgillust"/>
+            </StackLayout>
+            <StackLayout Padding="30" HorizontalOptions="StartAndExpand">
+                <Label Text="OTP" TextColor="Black" FontAttributes="Bold" FontSize="30" FontFamily="fontbold"/>
+                <Label Text="Verification" TextColor="Black" FontAttributes="Bold" FontSize="30" FontFamily="fontbold"/>
+                <Label Text="Enter the verification code sent to your email address or phone number registered with your account" FontSize="15" TextColor="Black" FontFamily="fontdefault"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Grid Padding="30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <cs:CustomEntry x:Name="step1" Grid.Column="0" TextChanged="step1_TextChanged" Keyboard="Numeric" MaxLength="1" HorizontalTextAlignment="Center" BackgroundColor="#e5e5e5" TextColor="#6C63FF" FontFamily="fontbold"/>
+                    <cs:CustomEntry x:Name="step2"  Grid.Column="1" TextChanged="step2_TextChanged" Keyboard="Numeric" MaxLength="1" HorizontalTextAlignment="Center" BackgroundColor="#e5e5e5" TextColor="#6C63FF" FontFamily="fontbold"/>
+                    <cs:CustomEntry x:Name="step3"  Grid.Column="2" TextChanged="step3_TextChanged"  Keyboard="Numeric" MaxLength="1" HorizontalTextAlignment="Center" BackgroundColor="#e5e5e5" TextColor="#6C63FF" FontFamily="fontbold"/>
+                    <cs:CustomEntry x:Name="step4"  Grid.Column="3" TextChanged="step4_TextChanged" Keyboard="Numeric" MaxLength="1" HorizontalTextAlignment="Center" BackgroundColor="#e5e5e5" TextColor="#6C63FF" FontFamily="fontbold"/>
+                </Grid>
+
+            </StackLayout>
+            <StackLayout Padding="30" Spacing="30">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="If you didnt receive a code! " FontSize="15" TextColor="Black"  FontFamily="fontdefault"/>
+                            <Span Text="Resend" FontSize="15" TextColor="#6C63FF"  FontFamily="fontdefault"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Text="Next" BackgroundColor="#6C63FF" FontFamily="fontdefault"  TextColor="White" CornerRadius="15" HorizontalOptions="End" WidthRequest="100"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
